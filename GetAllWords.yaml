@@ -5338,6 +5338,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Response_GetAllWords'
+        '401':
+          description: unauthorized
+          content:
+            application/json:
+              example:
+                error: unauthorized
+                status: 401
       requestBody:
         content:
           application/json:
@@ -5360,30 +5367,69 @@ components:
       description: Respresentation of all words response.
       type: object
       properties:
-        AllWordsInfo:
+        result:
           $ref: '#/components/schemas/AllWordsInfo'
     AllWordsInfo:
       description: 금형 표준어 유사어 정보
       type: object
       properties:
         금형부품용어:
-          $ref: '#/components/schemas/under_info'
+          $ref: '#/components/schemas/금형부품용어'
         금형설계용어:
-          $ref: '#/components/schemas/under_info'
+          $ref: '#/components/schemas/금형설계용어'
         금형제작용어:
-          $ref: '#/components/schemas/under_info'
+          $ref: '#/components/schemas/금형제작용어'
         금형종류용어:
-          $ref: '#/components/schemas/under_info'
+          $ref: '#/components/schemas/금형종류용어'
         제품성형용어:
-          $ref: '#/components/schemas/under_info'
-    under_info:
-      description: 금형 표준어 유사어 세부 정보
+          $ref: '#/components/schemas/제품성형용어'
+    금형부품용어:
+      description: 금형부품용어 대분류의 표준어 및 유사어 세부 정보
       type: object
       properties:
         세분류:
           description: 표준어 세분류
           type: string
-          example: 다이캐스팅 금형 부품
+        표준어/유사어:
+          description: 표준어 및 유사어 목록
+          type: object
+    금형설계용어:
+      description: 금형설계용어 대분류의 표준어 및 유사어 세부 정보
+      type: object
+      properties:
+        세분류:
+          description: 표준어 세분류
+          type: string
+        표준어/유사어:
+          description: 표준어 및 유사어 목록
+          type: object
+    금형제작용어:
+      description: 금형제작용어 대분류의 표준어 및 유사어 세부 정보
+      type: object
+      properties:
+        세분류:
+          description: 표준어 세분류
+          type: string
+        표준어/유사어:
+          description: 표준어 및 유사어 목록
+          type: object
+    금형종류용어:
+      description: 금형종류용어 대분류의 표준어 및 유사어 세부 정보
+      type: object
+      properties:
+        세분류:
+          description: 표준어 세분류
+          type: string
+        표준어/유사어:
+          description: 표준어 및 유사어 목록
+          type: object
+    제품성형용어:
+      description: 제품성형용어 대분류의 표준어 및 유사어 세부 정보
+      type: object
+      properties:
+        세분류:
+          description: 표준어 세분류
+          type: string
         표준어/유사어:
           description: 표준어 및 유사어 목록
           type: object
