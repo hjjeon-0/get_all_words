@@ -5359,8 +5359,8 @@ components:
   securitySchemes:
     APIKeyAuth:
       type: apiKey
-      name: API-KEY
-      in: header
+      name: x-mold-apigw-api-key
+      in: cookie
 
   schemas:
     Response_GetAllWords:
