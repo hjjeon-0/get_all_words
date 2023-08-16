@@ -11,6 +11,7 @@ info:
 paths:
   /GetAllWords:
     post:
+      x-mold-apigw-api-key: abcdefg124324
       summary: GetAllWords
       tags:
         - 표준어 유사어 조회
